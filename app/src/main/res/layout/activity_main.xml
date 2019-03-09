@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@color/colorAccent"
+        app:tabIndicatorColor="@color/white2"
        >
 
     </android.support.design.widget.TabLayout>

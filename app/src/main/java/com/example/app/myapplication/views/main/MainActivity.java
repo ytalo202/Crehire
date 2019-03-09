@@ -18,9 +18,9 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.tabLayout)
-    TabLayout tabLayout1;
+    TabLayout tabLayout;
     @BindView(R.id.viewPager)
-    ViewPager viewPager1;
+    ViewPager viewPager;
     private MainViewPagerAdapter adapter;
 
     @Override
@@ -39,18 +39,18 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new FragmentHistory(),"");
         adapter.addFragment(new FragmentAccount(),"");
 
-        viewPager1.setAdapter(adapter);
-        tabLayout1.setupWithViewPager(viewPager1);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout1.getTabAt(0).setIcon(R.drawable.review);
-        tabLayout1.getTabAt(1).setIcon(R.drawable.ic_history_ac);
-        tabLayout1.getTabAt(2).setIcon(R.drawable.ic_ac_unit);
+        tabLayout.getTabAt(0).setIcon(R.drawable.house_color);
+        tabLayout.getTabAt(1).setIcon(R.drawable.list);
+        tabLayout.getTabAt(2).setIcon(R.drawable.settings);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setElevation(0);
+        viewPager.setOffscreenPageLimit(3);
 
-
-        viewPager1.addOnPageChangeListener(
+        viewPager.addOnPageChangeListener(
                 new ViewPager.OnPageChangeListener() {
 
                     @Override
@@ -60,22 +60,19 @@ public class MainActivity extends AppCompatActivity {
                     public void onPageSelected(int position) {
                         switch (position) {
                             case 0:
-                                tabLayout1.getTabAt(0).setIcon(R.drawable.review);
-                                tabLayout1.getTabAt(1).setIcon(R.drawable.ic_history);
-                                tabLayout1.getTabAt(2).setIcon(R.drawable.ic_ac_unit);
-                                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+                                tabLayout.getTabAt(0).setIcon(R.drawable.house_color);
+                                tabLayout.getTabAt(1).setIcon(R.drawable.list);
+                                tabLayout.getTabAt(2).setIcon(R.drawable.settings);
                                 break;
                             case 1:
-                                tabLayout1.getTabAt(0).setIcon(R.drawable.ic_home);
-                                tabLayout1.getTabAt(1).setIcon(R.drawable.ic_history_ac);
-                                tabLayout1.getTabAt(2).setIcon(R.drawable.ic_ac_unit);
-                                Toast.makeText(MainActivity.this, "2", Toast.LENGTH_SHORT).show();
+                                tabLayout.getTabAt(0).setIcon(R.drawable.house);
+                                tabLayout.getTabAt(1).setIcon(R.drawable.list_color);
+                                tabLayout.getTabAt(2).setIcon(R.drawable.settings);
                                 break;
                             case 2:
-                                tabLayout1.getTabAt(0).setIcon(R.drawable.ic_home);
-                                tabLayout1.getTabAt(1).setIcon(R.drawable.ic_history);
-                                tabLayout1.getTabAt(2).setIcon(R.drawable.ic_ac_unit);
-                                Toast.makeText(MainActivity.this, "3", Toast.LENGTH_SHORT).show();
+                                tabLayout.getTabAt(0).setIcon(R.drawable.house);
+                                tabLayout.getTabAt(1).setIcon(R.drawable.list);
+                                tabLayout.getTabAt(2).setIcon(R.drawable.settings_color);
                                 break;
                         }
                     }

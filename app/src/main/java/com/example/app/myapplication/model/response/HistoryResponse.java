@@ -2,7 +2,7 @@ package com.example.app.myapplication.model.response;
 
 import java.util.List;
 
-public class PostResponse {
+public class HistoryResponse {
 
     private List<DataEntity> data;
 
@@ -30,11 +30,8 @@ public class PostResponse {
         private String id;
         private String clientName;
         private String clientImg;
-        private String postTime;
-        private String postText;
-        private String postImg;
-        private int numComments;
-        private int numShares;
+        private String date;
+        private String money;
 
         public String getId() {
             return id;
@@ -60,44 +57,20 @@ public class PostResponse {
             this.clientImg = clientImg;
         }
 
-        public String getPostTime() {
-            return postTime;
+        public String getDate() {
+            return date;
         }
 
-        public void setPostTime(String postTime) {
-            this.postTime = postTime;
+        public void setDate(String date) {
+            this.date = date;
         }
 
-        public String getPostText() {
-            return postText;
+        public String getMoney() {
+            return money;
         }
 
-        public void setPostText(String postText) {
-            this.postText = postText;
-        }
-
-        public String getPostImg() {
-            return postImg;
-        }
-
-        public void setPostImg(String postImg) {
-            this.postImg = postImg;
-        }
-
-        public int getNumComments() {
-            return numComments;
-        }
-
-        public void setNumComments(int numComments) {
-            this.numComments = numComments;
-        }
-
-        public int getNumShares() {
-            return numShares;
-        }
-
-        public void setNumShares(int numShares) {
-            this.numShares = numShares;
+        public void setMoney(String money) {
+            this.money = money;
         }
     }
 }
